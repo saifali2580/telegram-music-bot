@@ -1,27 +1,24 @@
+import os
+import asyncio
 from pyrogram import Client, filters
 from pytgcalls import PyTgCalls, idle
 from pytgcalls.types.input_stream import AudioPiped
 import yt_dlp
-import os
 
-# ===============================
-API_ID = "ضع_هنا_API_ID"
-API_HASH = "ضع_هنا_API_HASH"
-STRING_SESSION = "ضع_هنا_STRING_SESSION"
-# ===============================
+# جلب المتغيرات من Railway
+API_ID = int(os.environ.get("API_ID"))
+API_HASH = os.environ.get("API_HASH")
+STRING_SESSION = os.environ.get("STRING_SESSION")
 
-app = Client(session_name=STRING_SESSION, api_id=API_ID, api_hash=API_HASH)
+# انشاء الكلاينت والبوت
+app = Client(STRING_SESSION, api_id=API_ID, api_hash=API_HASH)
 pytgcalls = PyTgCalls(app)
 
-# أمر تشغيل ملف موجود مسبقاً
-@app.on_message(filters.text & filters.group)
+# أمر تشغيل ملف صوتي محلي
+@app.on_message(filters.group & filters.text)
 async def play_file(client, message):
-    text = message.text.split()
-    if text[0] == "شغل":
-        if len(text) < 2:
-            await message.reply_text("اكتب اسم الملف الصوتي لتشغيله")
-            return
-        filename = text[1]
+    if message.text.startswith("شغل "):
+        filename = message.text.replace("شغل ", "").strip()
         if not os.path.exists(filename):
             await message.reply_text("الملف مو موجود 😕")
             return
@@ -29,15 +26,11 @@ async def play_file(client, message):
         pytgcalls.join_group_call(chat_id, AudioPiped(filename))
         await message.reply_text(f"شغلت الملف: {filename} ✅")
 
-# أمر تحميل أغنية من يوتيوب وتشغيلها
-@app.on_message(filters.text & filters.group)
+# أمر تشغيل يوتيوب
+@app.on_message(filters.group & filters.text)
 async def play_youtube(client, message):
-    text = message.text.split()
-    if text[0] == "يوت":
-        if len(text) < 2:
-            await message.reply_text("اكتب رابط اليوتيوب")
-            return
-        url = text[1]
+    if message.text.startswith("يوت "):
+        url = message.text.replace("يوت ", "").strip()
         ydl_opts = {
             'format': 'bestaudio/best',
             'outtmpl': 'audio.%(ext)s',
@@ -50,15 +43,14 @@ async def play_youtube(client, message):
         except Exception as e:
             await message.reply_text(f"خطأ بالتحميل: {e}")
             return
-
         chat_id = message.chat.id
         pytgcalls.join_group_call(chat_id, AudioPiped(filename))
         await message.reply_text(f"شغلت: {info['title']} ✅")
 
-# أمر إيقاف التشغيل
-@app.on_message(filters.text & filters.group)
+# أمر إيقاف
+@app.on_message(filters.group & filters.text)
 async def stop(client, message):
-    if message.text == "ايقاف":
+    if message.text.strip() == "ايقاف":
         chat_id = message.chat.id
         await pytgcalls.leave_group_call(chat_id)
         await message.reply_text("تم إيقاف الصوت ✅")
@@ -72,5 +64,4 @@ async def main():
     await app.stop()
 
 if __name__ == "__main__":
-    import asyncio
     asyncio.run(main())
