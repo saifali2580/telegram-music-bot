@@ -1,4 +1,4 @@
-pyrogram==2.0.116
+pyrogram>=2.0.0,<3.0.0
 tgcrypto
-pytgcalls==2.4.0
-yt-dlp==2025.10.14
+pytgcalls>=2.4.0,<3.0.0
+yt-dlp>=2025.10.14
