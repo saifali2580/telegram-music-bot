@@ -5,16 +5,13 @@ from pytgcalls import PyTgCalls, idle
 from pytgcalls.types.input_stream import AudioPiped
 import yt_dlp
 
-# جلب المتغيرات من Railway
 API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
 STRING_SESSION = os.environ.get("STRING_SESSION")
 
-# انشاء الكلاينت والبوت
 app = Client(STRING_SESSION, api_id=API_ID, api_hash=API_HASH)
 pytgcalls = PyTgCalls(app)
 
-# أمر تشغيل ملف صوتي محلي
 @app.on_message(filters.group & filters.text)
 async def play_file(client, message):
     if message.text.startswith("شغل "):
@@ -26,7 +23,6 @@ async def play_file(client, message):
         pytgcalls.join_group_call(chat_id, AudioPiped(filename))
         await message.reply_text(f"شغلت الملف: {filename} ✅")
 
-# أمر تشغيل يوتيوب
 @app.on_message(filters.group & filters.text)
 async def play_youtube(client, message):
     if message.text.startswith("يوت "):
@@ -47,7 +43,6 @@ async def play_youtube(client, message):
         pytgcalls.join_group_call(chat_id, AudioPiped(filename))
         await message.reply_text(f"شغلت: {info['title']} ✅")
 
-# أمر إيقاف
 @app.on_message(filters.group & filters.text)
 async def stop(client, message):
     if message.text.strip() == "ايقاف":
@@ -55,7 +50,6 @@ async def stop(client, message):
         await pytgcalls.leave_group_call(chat_id)
         await message.reply_text("تم إيقاف الصوت ✅")
 
-# تشغيل البوت
 async def main():
     await app.start()
     await pytgcalls.start()
