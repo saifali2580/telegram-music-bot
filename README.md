@@ -31,4 +31,4 @@
 
 ## 📱 للتواصل والمطور (Contact)
 - **المطور سيف:** [@DowzC](https://t.me/DowzC)
-- **قناة التحديثات:** [DowzG Source](https://t.me/Dowzp)
+- **قناة التحديثات:** [Dowz Source](https://t.me/wofkq)
