@@ -1,6 +1,9 @@
-API_ID = 123456
-API_HASH = "your_api_hash"
-BOT_TOKEN = "bot_token"
-STRING_SESSION = "session_string"
-OWNER_ID = 123456789
+import os
+
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+STRING_SESSION = os.getenv("STRING_SESSION")
+OWNER_ID = int(os.getenv("OWNER_ID"))
+
 BOT_NAME = "الموسيقار"
