@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# قاعدة البيانات
+*.db
+*.sqlite
+
+# التحميلات المؤقتة
+downloads/
+
+# السجلات
+*.log
+
+# ملفات حساسة (لا ترفعها أبداً)
+config.py
+sudo.json
+botname.txt
+*.session
+*.session-journal
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+.env
+
+# مجلدات التطوير
+.vscode/
+.idea/
