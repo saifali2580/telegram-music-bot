@@ -1,4 +1,3 @@
-```markdown
 # 🎵 بوت موسيقى تيليجرام | Telegram Music Bot v6
 
 <p align="center">
@@ -14,27 +13,27 @@
 
 ---
 
-## ✨ المميزات
+# ✨ المميزات
 
-- 🎧 **تشغيل عالي الجودة**: بث صوتي بدون تقطيع.
-- 🔍 **بحث متعدد المنصات**: YouTube • SoundCloud • Spotify.
-- 📜 **نظام Queue احترافي**: قائمة انتظار متقدمة مع حفظ دائم.
-- ⏭️ **تخطي حقيقي**: تشغيل تلقائي للأغنية التالية.
-- 🔐 **اشتراك إجباري**: حماية كاملة مع أزرار تحقق انلاين.
-- 👑 **لوحة تحكم كاملة**: للمالك والمطورين بأزرار شفافة.
-- 📢 **نظام إذاعة متقدم**: مع حماية من FloodWait.
-- 🔄 **استعادة تلقائية**: استئناف التشغيل بعد إعادة التشغيل.
-- 🗑️ **تنظيف تلقائي**: حذف الملفات المؤقتة دورياً.
-- 🛡️ **حماية من السبام**: تحديد وقت بين الأوامر.
-- 📊 **نظام سجلات (Logging)**: لمراقبة الأداء والأخطاء.
-- 🤖 **حساب مساعد ذكي**: للانضمام التلقائي للمكالمات.
-- 💾 **قاعدة بيانات SQLite**: حفظ دائم لجميع البيانات.
+- 🎧 تشغيل صوتي عالي الجودة بدون تقطيع
+- 🔍 بحث متعدد المنصات: YouTube • SoundCloud • Spotify
+- 📜 نظام Queue احترافي مع حفظ دائم في قاعدة البيانات
+- ⏭️ تخطي حقيقي مع تشغيل تلقائي للأغنية التالية
+- 🔐 نظام اشتراك إجباري مع أزرار تحقق انلاين
+- 👑 لوحة تحكم كاملة للمالك والمطورين بأزرار شفافة
+- 📢 نظام إذاعة متقدم مع حماية من FloodWait
+- 🔄 استعادة تلقائية للتشغيل بعد إعادة التشغيل
+- 🗑️ تنظيف تلقائي للملفات المؤقتة
+- 🛡️ حماية من السبام مع تحديد وقت بين الأوامر
+- 📊 نظام سجلات (Logging) لمراقبة الأداء
+- 🤖 حساب مساعد ذكي للانضمام للمكالمات الصوتية
+- 💾 قاعدة بيانات SQLite لحفظ جميع البيانات
 
 ---
 
-## 🛠️ جميع الأوامر
+# 🛠️ جميع الأوامر
 
-### 🎵 أوامر التشغيل (للمشرفين)
+## 🎵 أوامر التشغيل (للمشرفين)
 
 | الأمر | الوظيفة |
 |--------|---------|
@@ -44,7 +43,9 @@
 | `كتم` أو `mute` | كتم صوت المساعد داخل المكالمة |
 | `تحدث` أو `unmute` | إلغاء الكتم وإعادة الصوت |
 
-### 📜 أوامر قائمة الانتظار
+---
+
+## 📜 أوامر قائمة الانتظار
 
 | الأمر | الوظيفة |
 |--------|---------|
@@ -52,14 +53,18 @@
 | `احذف` + رقم الأغنية | حذف أغنية محددة من القائمة |
 | `مسح_الكيو` أو `clear` | مسح قائمة الانتظار بالكامل |
 
-### ⚡ أوامر عامة
+---
+
+## ⚡ أوامر عامة
 
 | الأمر | الوظيفة |
 |--------|---------|
 | `بنك` أو `ping` | فحص سرعة استجابة السيرفر |
 | `/start` | عرض واجهة البوت الرئيسية |
 
-### 👑 أوامر المالك (خاصة)
+---
+
+## 👑 أوامر المالك (خاصة)
 
 | الأمر | الوظيفة |
 |--------|---------|
@@ -72,7 +77,7 @@
 
 ---
 
-## 📋 المتطلبات (Requirements)
+# 📋 المتطلبات
 
 | المتطلب | الإصدار |
 |----------|----------|
@@ -84,33 +89,108 @@
 
 ---
 
-## ☁️ النشر المباشر
+# ⚙️ إعداد البوت بالكامل
 
-### 🚀 النشر على Railway (بنقرة واحدة)
+## 1️⃣ إنشاء بوت من BotFather
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/your-template-id)
-
-**الخطوات:**
-1. اضغط على زر النشر أعلاه.
-2. سجل الدخول إلى Railway.
-3. أضف المتغيرات (Variables):
-   - `API_ID` - من my.telegram.org
-   - `API_HASH` - من my.telegram.org
-   - `BOT_TOKEN` - من @BotFather
-   - `STRING_SESSION` - جلسة الحساب المساعد
-   - `OWNER_ID` - ايديك الرقمي
-4. انتظر حتى يكتمل النشر.
+1. افتح @BotFather
+2. أرسل:
+```text
+/newbot
+```
+3. اختر اسم للبوت
+4. اختر يوزر ينتهي بـ `bot`
+5. انسخ `BOT_TOKEN`
 
 ---
 
-### 🐳 النشر باستخدام Docker
+## 2️⃣ الحصول على API_ID و API_HASH
+
+اذهب إلى:
+
+🔗 https://my.telegram.org
+
+ثم:
+
+1. سجل دخول برقمك
+2. ادخل إلى:
+```text
+API Development Tools
+```
+3. أنشئ تطبيق جديد
+4. انسخ:
+- API_ID
+- API_HASH
+
+---
+
+## 3️⃣ إنشاء STRING_SESSION
+
+يمكنك إنشاء جلسة الحساب المساعد عبر:
+
+- سكريبت Pyrogram
+- بوتات توليد الجلسات
+- Replit أو Termux أو VPS
+
+بعد إنشاء الجلسة انسخ:
+```text
+STRING_SESSION
+```
+
+---
+
+## 4️⃣ إنشاء ملف config.env
+
+أنشئ ملف باسم:
+
+```text
+config.env
+```
+
+ثم ضع بداخله:
+
+```env
+API_ID=123456
+API_HASH=your_api_hash
+BOT_TOKEN=your_bot_token
+STRING_SESSION=your_string_session
+OWNER_ID=123456789
+```
+
+---
+
+# ☁️ النشر المباشر
+
+## 🚀 النشر على Railway
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/your-template-id)
+
+### خطوات النشر:
+
+1. اضغط Deploy
+2. سجل دخول بحساب GitHub
+3. أضف المتغيرات التالية:
+
+| المتغير | الوصف |
+|----------|--------|
+| API_ID | من my.telegram.org |
+| API_HASH | من my.telegram.org |
+| BOT_TOKEN | من BotFather |
+| STRING_SESSION | جلسة الحساب المساعد |
+| OWNER_ID | ايديك الرقمي |
+
+4. انتظر حتى يكتمل النشر
+5. شغل البوت 🚀
+
+---
+
+## 🐳 النشر باستخدام Docker
 
 ```bash
-# بناء الصورة
 docker build -t music-bot .
 
-# تشغيل الحاوية
-docker run -d --name music-bot \
+docker run -d \
+  --name music-bot \
   -e API_ID=123456 \
   -e API_HASH="your_api_hash" \
   -e BOT_TOKEN="your_bot_token" \
@@ -122,117 +202,181 @@ docker run -d --name music-bot \
 
 ---
 
-🖥️ النشر على VPS (سطر واحد)
+# 🖥️ التنصيب على VPS
+
+## 📦 تثبيت تلقائي بسطر واحد
 
 ```bash
 git clone https://github.com/saifali2580/telegram-music-bot.git && cd telegram-music-bot && chmod +x setup.sh && sudo bash setup.sh
 ```
 
-سكريبت setup.sh راح يسألك عن البيانات ويضبط كل شيء تلقائياً:
+---
 
-· تحديث النظام وتثبيت Python و FFmpeg
-· تحميل المشروع وتثبيت المتطلبات
-· إنشاء ملف config.env
-· إعداد خدمة systemd للتشغيل 24/7
+## 🔧 ماذا يفعل setup.sh ؟
+
+- تحديث السيرفر بالكامل
+- تثبيت Python و FFmpeg
+- تثبيت المكتبات المطلوبة
+- إنشاء ملف config.env
+- إنشاء خدمة systemd
+- تشغيل البوت تلقائياً 24/7
+- إعادة تشغيل تلقائية عند التوقف
 
 ---
 
-📁 هيكل المشروع
-
-```
-telegram-music-bot/
-├── main.py                  # الملف الرئيسي - كود البوت
-├── config.py                # ملف الإعدادات (يقرأ من متغيرات البيئة)
-├── config.env.example       # قالب المتغيرات (للمستخدمين)
-├── requirements.txt         # المكتبات المطلوبة
-├── Dockerfile               # لبناء حاوية Docker
-├── Procfile                 # أمر التشغيل للمنصات السحابية
-├── setup.sh                 # سكريبت تنصيب تفاعلي كامل
-├── .gitignore               # ملفات مستثناة من Git
-├── README.md                # توثيق المشروع
-├── music_bot.db             # قاعدة بيانات SQLite (تتكون تلقائياً)
-└── downloads/               # مجلد التحميلات المؤقتة (يتكون تلقائياً)
-```
-
----
-
-❓ الأسئلة الشائعة (FAQ)
-
-<details>
-<summary><b>كيف أحصل على STRING_SESSION؟</b></summary>
-<br>
-يمكنك توليد جلسة Pyrogram باستخدام:
-<br>
-• تشغيل سكريبت بايروجرام محلياً على جهازك
-<br>
-• استخدام بوتات توليد الجلسات المتوفرة في تيليجرام
-<br>
-• استخدام موقع Replit لتشغيل كود توليد الجلسة
-</details>
-
-<details>
-<summary><b>البوت لا ينضم للمكالمة الصوتية؟</b></summary>
-<br>
-تأكد من:
-<br>
-1. الحساب المساعد موجود في المجموعة
-<br>
-2. الحساب المساعد لديه صلاحية التحدث
-<br>
-3. STRING_SESSION صالحة ولم تنتهِ
-<br>
-4. تم رفع البوت والمساعد كمشرفين في القناة
-</details>
-
-<details>
-<summary><b>كيف أضيف البوت إلى مجموعتي؟</b></summary>
-<br>
-1. اذهب إلى بوتك في تيليجرام
-<br>
-2. اضغط على اسم البوت
-<br>
-3. اختر "إضافة إلى مجموعة" وحدد المجموعة
-<br>
-4. تأكد من إضافة الحساب المساعد أيضاً إلى نفس المجموعة
-</details>
-
----
-
-👨‍💻 للمطورين
+## ▶️ تشغيل البوت يدوياً
 
 ```bash
-# استنساخ المستودع
+python3 main.py
+```
+
+---
+
+## 🔄 تشغيل البوت بالخلفية
+
+```bash
+screen -S musicbot
+python3 main.py
+```
+
+للخروج بدون إيقاف البوت:
+
+```bash
+CTRL + A ثم D
+```
+
+---
+
+## 📌 أوامر إدارة الخدمة
+
+### تشغيل البوت
+
+```bash
+sudo systemctl start musicbot
+```
+
+### إيقاف البوت
+
+```bash
+sudo systemctl stop musicbot
+```
+
+### إعادة تشغيل البوت
+
+```bash
+sudo systemctl restart musicbot
+```
+
+### معرفة حالة البوت
+
+```bash
+sudo systemctl status musicbot
+```
+
+### مشاهدة السجلات
+
+```bash
+journalctl -u musicbot -f
+```
+
+---
+
+# 📁 هيكل المشروع
+
+```text
+telegram-music-bot/
+├── main.py
+├── config.py
+├── config.env.example
+├── requirements.txt
+├── Dockerfile
+├── Procfile
+├── setup.sh
+├── README.md
+├── music_bot.db
+└── downloads/
+```
+
+---
+
+# ❓ الأسئلة الشائعة
+
+<details>
+<summary><b>البوت لا يشغل الأغاني؟</b></summary>
+
+تأكد من:
+
+- تثبيت FFmpeg
+- الحساب المساعد داخل المجموعة
+- رفع البوت والمساعد مشرفين
+- وجود صلاحية التحدث بالمكالمة
+
+</details>
+
+---
+
+<details>
+<summary><b>كيف أضيف البوت لمجموعتي؟</b></summary>
+
+1. افتح البوت
+2. اضغط إضافة إلى مجموعة
+3. اختر المجموعة
+4. أضف الحساب المساعد أيضاً
+5. ارفعهم مشرفين
+
+</details>
+
+---
+
+<details>
+<summary><b>كيف أغير اسم البوت أو صورته؟</b></summary>
+
+من @BotFather استخدم:
+
+```text
+/setname
+/setuserpic
+```
+
+</details>
+
+---
+
+# 👨‍💻 للمطورين
+
+```bash
 git clone https://github.com/saifali2580/telegram-music-bot.git
+
 cd telegram-music-bot
 
-# إنشاء بيئة افتراضية
 python3 -m venv venv
+
 source venv/bin/activate
 
-# تثبيت المتطلبات
 pip install -r requirements.txt
 
-# نسخ القالب وإضافة بياناتك
 cp config.env.example config.env
+
 nano config.env
 
-# تشغيل البوت
 source config.env && python3 main.py
 ```
 
 ---
 
-📱 تواصل معنا
+# 📱 تواصل معنا
 
 <p align="center">
   <a href="https://t.me/DowzC"><img src="https://img.shields.io/badge/Telegram-%40DowzC-blue?style=for-the-badge&logo=telegram"></a>
   <a href="https://t.me/wofkq"><img src="https://img.shields.io/badge/Channel-Dowz%20Source-red?style=for-the-badge&logo=telegram"></a>
+  <a href="https://www.tiktok.com/@qq_db"><img src="https://img.shields.io/badge/TikTok-%40qq__db-black?style=for-the-badge&logo=tiktok"></a>
+  <a href="https://www.instagram.com/qq_db"><img src="https://img.shields.io/badge/Instagram-%40qq__db-E4405F?style=for-the-badge&logo=instagram"></a>
   <a href="https://github.com/saifali2580"><img src="https://img.shields.io/badge/GitHub-saifali2580-black?style=for-the-badge&logo=github"></a>
 </p>
 
 ---
 
-📄 الترخيص
+# 📄 الترخيص
 
 هذا المشروع مرخص تحت MIT License.
 
@@ -241,6 +385,3 @@ source config.env && python3 main.py
 <p align="center">
   <b>صنع بـ ❤️ بواسطة <a href="https://t.me/DowzC">سيف - DowzC</a></b>
 </p>
-```
-
----
